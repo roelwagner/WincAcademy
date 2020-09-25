@@ -1,0 +1,295 @@
+/*--------------------------------------------- OVERALL ---------------------------------------------*/
+
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  color: #302718;
+  background-color: #f5f0d6;
+  font-family: "Open Sans Condensed";
+  font-size: 1em;
+  line-height: 105%;
+}
+h1 {
+  padding: 20px;
+  line-height: 105%;
+}
+h3 {
+  margin: 5px;
+}
+p {
+  margin: 10px;
+}
+
+.container {
+  display: grid;
+  height: 100vh;
+  grid-gap: 2px;
+  grid-template-areas:
+    "h h h h h h h h h h h h"
+    "n n n n n n n n n n n n"
+    "m m m m m m m m m m m m"
+    "m m m m m m m m m m m m"
+    "m m m m m m m m m m m m"
+    "m m m m m m m m m m m m"
+    "m m m m m m m m m m m m"
+    "m m m m m m m m m m m m"
+    "m m m m m m m m m m m m"
+    "m m m m m m m m m m m m"
+    "m m m m m m m m m m m m"
+    "f f f f f f f f f f f f";
+}
+
+/*--------------------------------------------- PHONE - HEADER ---------------------------------------------*/
+
+.container > header {
+  background-color: #ded2a8;
+  grid-area: h;
+}
+
+.main_header {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  min-height: min-content;
+  justify-content: center;
+  align-items: center;
+}
+
+/*--------------------------------------------- PHONE - NAVIGATION ---------------------------------------------*/
+
+.container > nav {
+  background-color: #c7ab59;
+  grid-area: n;
+}
+
+.main_nav {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 1.3em;
+}
+.main_nav li {
+  list-style: none;
+  padding: 10px;
+}
+
+a {
+  color: #302718;
+  text-decoration: none;
+}
+a:hover {
+  color: white;
+  text-decoration: underline;
+  font-weight: bolder;
+}
+
+/*--------------------------------------------- PHONE - MAIN SECTION ---------------------------------------------*/
+
+.container > main {
+  background-color: #ded2a8;
+  grid-area: m;
+}
+
+img {
+  width: 300px;
+  height: 225px;
+  padding-top: 15px;
+}
+
+.gallery {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+.video_box {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+
+.video {
+  margin: 20px auto;
+}
+article {
+  margin: 10px 0px;
+  padding: 10px 0px;
+  border-top: 1px solid #302718;
+}
+article > a > h4 {
+  padding-left: 10px;
+}
+
+/*--------------------------------------------- PHONE - FOOTER ---------------------------------------------*/
+
+.container > footer {
+  background-color: #699e3c;
+  grid-area: f;
+  padding: 15px;
+}
+
+.main_footer {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.875em;
+}
+
+/*--------------------------------------------- TABLET ---------------------------------------------*/
+
+@media (min-width: 768px) {
+  body {
+    width: 80%;
+    margin: 20px auto 0px;
+    font-size: 1em;
+  }
+  .container {
+    display: grid;
+    height: 100vh;
+    grid-template-areas:
+      "h h h h h h h h h h h h"
+      "n m m m m m m m m m m m"
+      "n m m m m m m m m m m m"
+      "n m m m m m m m m m m m"
+      "n m m m m m m m m m m m"
+      "n m m m m m m m m m m m"
+      "n m m m m m m m m m m m"
+      "n m m m m m m m m m m m"
+      "n m m m m m m m m m m m"
+      "n m m m m m m m m m m m"
+      "n m m m m m m m m m m m"
+      "f f f f f f f f f f f f";
+    grid-gap: 2px;
+  }
+
+  /*--------------------------------------------- TABLET - HEADER ---------------------------------------------*/
+
+  .container > header {
+    grid-area: h;
+  }
+
+  /*--------------------------------------------- DESKTOP - NAVIGATION ---------------------------------------------*/
+
+  .container > nav {
+    grid-area: n;
+  }
+
+  .main_nav {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-flow: column wrap;
+    font-size: 1.3em;
+  }
+
+  .main_nav li {
+    padding: 0px 20px;
+  }
+
+  /*--------------------------------------------- DESKTOP - MAIN SECTION ---------------------------------------------*/
+
+  .container > main {
+    grid-area: m;
+    padding: 30px;
+  }
+
+  /*--------------------------------------------- DESKTOP - ASIDE ---------------------------------------------*/
+
+  .container > aside {
+    background-color: #ded2a8;
+    grid-area: s;
+  }
+
+  /*--------------------------------------------- DESKTOP - FOOTER ---------------------------------------------*/
+
+  .container > footer {
+    grid-area: f;
+  }
+}
+
+/*--------------------------------------------- CONTACT ---------------------------------------------*/
+
+.recipe {
+  margin: 50px;
+}
+.recipe > p {
+  grid-column: 1 / -1;
+  margin: 5px;
+}
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 5px;
+}
+
+.label {
+  grid-column-start: 1;
+  width: 100%;
+}
+
+.input {
+  grid-column-end: -1;
+  justify-self: right;
+  width: 100%;
+}
+.input > input {
+  margin-bottom: 20px;
+}
+.submit {
+  grid-column: 1 / -1;
+}
+.aside {
+  margin: 0px 50px;
+}
+
+.aside > p {
+  margin: 5px;
+}
+/*--------------------------------------------- DESKTOP ---------------------------------------------*/
+
+@media (min-width: 1024px) {
+  body {
+    width: 80%;
+    margin: 20px auto 0px;
+    font-size: 1em;
+  }
+  .container {
+    display: grid;
+    height: 100vh;
+    grid-template-areas:
+      "h h h h h h h h h h h h"
+      "n m m m m m m m m m m m"
+      "n m m m m m m m m m m m"
+      "n m m m m m m m m m m m"
+      "n m m m m m m m m m m m"
+      "n m m m m m m m m m m m"
+      "n m m m m m m m m m m m"
+      "n m m m m m m m m m m m"
+      "n m m m m m m m m m m m"
+      "n m m m m m m m m m m m"
+      "n m m m m m m m m m m m"
+      "f f f f f f f f f f f f";
+    grid-gap: 2px;
+  }
+  main {
+    display: flex;
+    justify-items: center;
+  }
+  section {
+    flex: 2;
+  }
+  aside {
+    flex: 1;
+    margin-top: 50px;
+    border-left: 1px solid #302718;
+  }
+}

@@ -1,0 +1,109 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: #ffeead;
+  font: normal 16px "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  color: #ffeead;
+}
+
+.container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(12, 1fr);
+  grid-gap: 2px;
+}
+
+.container > header {
+  background-color: lightskyblue;
+  grid-column: 1 / -1;
+  grid-row: 1 / 2;
+}
+
+.container > main {
+  background-color: #ff6f69;
+  grid-column: 1 / -1;
+  grid-row: 2 / 9;
+}
+
+.container > aside {
+  background-color: #88d8b0;
+  grid-column: 1 / -1;
+  grid-row: 9 / auto-fill;
+}
+.container > footer {
+  background-color: #ffcc5c;
+  grid-column: 1 / -1;
+  grid-row-start: -2;
+}
+
+.content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+@media (min-width: 768px) and (max-width: 1300px) {
+  .container {
+    grid-template-areas:
+      "h h h m m m m m m m m m"
+      "h h h m m m m m m m m m"
+      "h h h m m m m m m m m m"
+      "h h h m m m m m m m m m"
+      "h h h m m m m m m m m m"
+      "h h h m m m m m m m m m"
+      "h h h m m m m m m m m m"
+      "h h h w w w w w w w w w"
+      "h h h w w w w w w w w w"
+      "h h h w w w w w w w w w"
+      "h h h w w w w w w w w w"
+      "h h h f f f f f f f f f";
+  }
+  .container > header {
+    grid-area: h;
+  }
+  .container > main {
+    grid-area: m;
+  }
+  .container > aside {
+    grid-area: w;
+  }
+  .container > footer {
+    grid-area: f;
+  }
+}
+
+@media (min-width: 1300px) {
+  .container {
+    grid-template-areas:
+      "h h m m m m m m m m w w"
+      "h h m m m m m m m m w w"
+      "h h m m m m m m m m w w"
+      "h h m m m m m m m m w w"
+      "h h m m m m m m m m w w"
+      "h h m m m m m m m m w w"
+      "h h m m m m m m m m w w"
+      "h h m m m m m m m m w w"
+      "h h m m m m m m m m w w"
+      "h h m m m m m m m m w w"
+      "h h m m m m m m m m w w"
+      "h h f f f f f f f f w w";
+  }
+  .container > header {
+    grid-area: h;
+  }
+  .container > main {
+    grid-area: m;
+  }
+  .container > aside {
+    grid-area: w;
+  }
+  .container > footer {
+    grid-area: f;
+  }
+}

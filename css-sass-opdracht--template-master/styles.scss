@@ -1,0 +1,207 @@
+@import url("https://fonts.googleapis.com/css?family=Raleway:300,500,700");
+@import "constants";
+/* Global */
+* {
+  box-sizing: border-box;
+}
+body {
+  color: $textColor;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  font-weight: 300;
+  background-color: $bodyBkgColor;
+}
+h1 {
+  font-size: 1.7em;
+  font-weight: 700;
+  line-height: 1.5em;
+  text-transform: uppercase;
+}
+h2 {
+  text-transform: uppercase;
+}
+h4 {
+  font-size: 0.8em;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+h6 {
+  font-weight: 500;
+}
+a {
+  text-decoration: none;
+  color: $textColor;
+}
+ul {
+  list-style: none;
+}
+.btn {
+  display: inline-block;
+  padding: 0.5em 1.5em;
+  border: solid 1px $borderColor;
+  transition: all 0.3s ease-in;
+}
+.btn:hover,
+.btn:focus {
+  transform: translate(0px, -2px);
+  -webkit-box-shadow: 0px 10px 7px -9px $shadowColor;
+  -moz-box-shadow: 0px 10px 7px -9px $shadowColor;
+  box-shadow: 0px 10px 7px -9px $shadowColor;
+  transition: all 0.3s ease-out;
+}
+form {
+  display: flex;
+}
+form input:first-child {
+  flex: 1 0 80%;
+  background-color: transparent;
+}
+form input:last-child {
+  flex: 1 0 20%;
+  border-left: 0;
+  cursor: pointer;
+  background-color: $btnBkgColor;
+  transition: all 0.25s ease;
+}
+.submit:hover {
+  background-color: $btnHoverBkgColor;
+  color: $btnHoverColor;
+  transition: all 0.25s ease;
+  -webkit-box-shadow: 0px 10px 7px -9px $shadowColor;
+  -moz-box-shadow: 0px 10px 7px -9px $shadowColor;
+  box-shadow: 0px 10px 7px -9px $shadowColor;
+}
+input {
+  padding: 10px;
+  border: 1px solid $borderColor;
+}
+
+/* Pas alleen de onderstaande regels aan */
+
+/*Global naar mijn idee*/
+
+.title {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding-bottom: 1em;
+}
+
+.title__line {
+  width: 3em;
+  height: 1px;
+  background-color: $titleLine;
+  margin-right: 1em;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-around;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+  padding: $stdPad;
+  background-color: $headerBkgColor;
+  height: 120px;
+  -webkit-box-shadow: 0px 10px 7px -9px $shadowColor;
+  -moz-box-shadow: 0px 10px 7px -9px $shadowColor;
+  box-shadow: 0px 10px 7px -9px $shadowColor;
+
+  .header__brand-logo img {
+    width: auto;
+    padding-top: $stdPad;
+    height: 7.5em;
+  }
+}
+/* Hero Section */
+.hero {
+  padding: $stdPad;
+  display: flex;
+  height: 100vh;
+  align-items: center;
+  background: $heroBkgColor;
+
+  .hero__img img {
+    display: block;
+    height: auto;
+    width: 15.5em;
+  }
+
+  .hero__text {
+    @include sectionText();
+  }
+}
+
+/* Featured Section */
+.featured {
+  padding: $stdPad;
+
+  .featured__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+
+    .featured__wrapper__image img {
+      width: 300px;
+    }
+
+    .featured__wrapper__text {
+      @include sectionText();
+
+      p {
+        text-align: justify;
+        padding: $stdPad;
+        line-height: 1.4em;
+      }
+    }
+  }
+}
+
+/* About Section */
+.about {
+  background-color: $aboutBkgColor;
+  padding: $stdPad;
+
+  .about__wrapper {
+    display: flex;
+
+    .about__wrapper__text {
+      @include sectionText();
+
+      p {
+        text-align: justify;
+        padding-bottom: 1em;
+        line-height: 1.4em;
+      }
+    }
+    .video--wrapper {
+      position: relative;
+      padding-bottom: 33.25%;
+      overflow: hidden;
+      align-self: center;
+      flex: 2 0 55%;
+      margin: 1.4em 0;
+
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+
+/* Contact Section */
+.contact {
+  padding: $stdPad;
+  .contact__wrapper__form__wrapper {
+    padding: $stdPad;
+  }
+  .contact__wrapper__copy__wrapper {
+    padding-left: $stdPad;
+  }
+}

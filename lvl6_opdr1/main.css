@@ -1,0 +1,76 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+article {
+  width: 300px;
+  border: 1px solid rgb(208, 208, 208);
+  border-radius: 5px;
+  margin: 25px;
+  padding: 15px;
+  display: grid;
+  grid-template-areas:
+    "n n n n p p"
+    "c c c c p p"
+    "m m m m m m"
+    "ba ba ba bd bd bd";
+}
+.name {
+  grid-area: n;
+  color: rgb(29, 29, 29);
+  font-size: 1.45em;
+  font-weight: 300;
+}
+.connection {
+  grid-area: c;
+  color: rgb(135, 135, 135);
+  font-size: 1.15em;
+  font-weight: 100;
+  margin-top: 5px;
+}
+.profile_pic {
+  grid-area: p;
+  width: 45px;
+  justify-self: right;
+}
+
+.message {
+  grid-area: m;
+  color: rgb(65, 65, 65);
+  font-size: 1em;
+  margin: 10px 0px;
+}
+button {
+  background-color: white;
+  font-size: 1.15em;
+  height: 40px;
+  border: none;
+}
+.accept {
+  grid-area: ba;
+  color: rgb(47, 183, 34);
+  border-top: 1px solid rgb(47, 183, 34);
+  border-left: 1px solid rgb(47, 183, 34);
+  border-bottom: 1px solid rgb(47, 183, 34);
+  border-radius: 3px 0px 0px 3px;
+}
+.decline {
+  grid-area: bd;
+  color: rgb(229, 0, 18);
+  border: 1px solid rgb(229, 0, 18);
+  border-radius: 0px 3px 3px 0px;
+  padding-left: 15px;
+}

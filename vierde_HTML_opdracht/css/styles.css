@@ -1,0 +1,26 @@
+body {
+  color: navy;
+  background-color: lightgoldenrodyellow;
+  font: normal 12px "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.black-border {
+  border: 5px solid black;
+}
+
+.red-text {
+  color: rgb(151, 11, 11);
+}
+
+#green-background {
+  background-color: rgb(114, 163, 114);
+}
+
+.lists {
+  color: brown;
+  font-size: 18px;
+}
+
+.footer-text {
+  font-style: italic;
+}

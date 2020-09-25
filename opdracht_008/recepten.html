@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Recepten</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  </head>
+
+  <body>
+    <div class="main_wrapper">
+      <header>
+        <h1>Recepten</h1>
+        <nav>
+          <ul class="main_nav_list">
+            <li>
+              <a href="index.html">Home</a>
+            </li>
+            <li>
+              <a href="about.html">Over mij</a>
+            </li>
+            <li>
+              <a href="contact.html">Contact</a>
+            </li>
+          </ul>
+        </nav>
+      </header>
+
+      <main>
+        <form name="recipe_form" method="POST" data-netlify="true">
+          <label for="name">Naam:</label><br />
+          <input type="text" name="name" /><br />
+          <label for="email">E-mailadres:</label><br />
+          <input type="email" name="email" /><br />
+          <label for="tel">Telefoonnummer:</label><br />
+          <input type="tel" name="tel" /><br />
+          <label for="age">Leeftijd:</label><br />
+          <input type="number" name="age" /><br />
+          <label for="birth_date">Geboorte datum:</label><br />
+          <input type="date" name="birth_date" /><br />
+          <label for="male">Man</label>
+          <input type="radio" name="male" />
+          <label for="female">Vrouw</label>
+          <input type="radio" name="female" /><br />
+          <p>Favoriete keuken:</p>
+          <input type="checkbox" name="french" /><label for="french">
+            Frans</label
+          ><br />
+          <input type="checkbox" name="italian" /><label for="italian">
+            Italiaans</label
+          ><br />
+          <input type="checkbox" name="spanish" /><label for="spanish">
+            Spaans</label
+          ><br />
+          <input type="checkbox" name="arabic" /><label for="arabic">
+            Arabisch</label
+          ><br />
+          <label for="color">Favoriete kleur:</label>
+          <input type="color" name="color" /><br />
+          <label for="bio">Biografie</label><br />
+          <textarea name="bio" cols="30" rows="10">
+Vertel iets over jezelf
+          </textarea
+          ><br />
+          <label for="recipe">Upload je laatste recept:</label>
+          <input type="file" name="recipe" /><br />
+          <label for="website">Link ons door naar je website:</label><br />
+          <input type="url" name="website" /><br />
+          <input type="reset" name="reset" />
+          <input type="submit" name="submit" />
+        </form>
+      </main>
+
+      <footer>
+        <hr />
+        <p>Gemaakt door Roel</p>
+      </footer>
+    </div>
+  </body>
+</html>

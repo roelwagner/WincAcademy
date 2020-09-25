@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bier Brouwen</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Open Sans Condensed:300"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <div class="main_header"><h1>RECEPTEN</h1></div>
+      </header>
+      <nav>
+        <ul class="main_nav">
+          <li><a href="index.html">HOME</a></li>
+          <li><a href="brouwen.html">BROUWEN</a></li>
+          <li><a href="recepten.html">RECEPTEN</a></li>
+        </ul>
+      </nav>
+      <main>
+        <section>
+          <div class="recipe">
+            <h3>
+              Leuk dat je deze pagina bezoekt, we zouden het waanzing vinden als
+              je hier je favoriete recept wilt uploaden.
+            </h3>
+            <form name="recipe_form" method="POST" data-netlify="true">
+              <label class="label" for="name">Naam:</label>
+              <input class="input" type="text" name="name" /><br />
+              <label class="label" for="email">E-mailadres:</label>
+              <input class="input" type="email" name="email" /><br />
+              <label class="label" for="tel">Telefoonnummer:</label>
+              <input class="input" type="tel" name="tel" /><br />
+              <label class="label" for="age">Leeftijd:</label>
+              <input class="input" type="number" name="age" /><br />
+              <label class="label" for="birth_date">Geboorte datum:</label>
+              <input class="input" type="date" name="birth_date" /><br />
+              <label class="label" for="geslacht">Geslacht:</label>
+              <div class="input">
+                Man<input type="radio" name="gender" value="male" /> Vrouw<input
+                  type="radio"
+                  name="gender"
+                  value="female"
+                />
+              </div>
+              <label class="label" for="color">Favoriete kleur:</label>
+              <input class="input" type="color" name="color" /><br />
+              <label class="label" for="bio">Biografie</label>
+              <textarea
+                class="input"
+                name="bio"
+                cols="30"
+                rows="5"
+                placeholder="Vertel iets over jezelf..."
+              ></textarea
+              ><br />
+              <label class="label" for="recipe"
+                >Upload je laatste recept:</label
+              >
+              <input class="input" type="file" name="recipe" /><br />
+              <label class="label" for="website"
+                >Link ons door naar je website:</label
+              >
+              <input class="input" type="url" name="website" /><br />
+              <input
+                class="submit"
+                type="submit"
+                name="submit"
+                value="Verzenden"
+              />
+            </form>
+          </div>
+        </section>
+        <aside>
+          <div class="aside">
+            <h3>Laatste geuploade recepten:</h3>
+            <article>
+              <a href="#"
+                ><h4>Zeldzame Bourbon County Brand Stout (2010)</h4></a
+              >
+              <p>
+                2 jaar gerijpt in 23 jaar oude Pappy Van Winkle Bourbon Barrels.
+                Een echte zeldzaamheid - proef en deel het alleen met degenen
+                die je dierbaar zijn, want het zal nooit meer gemaakt worden.
+              </p>
+            </article>
+            <a href=""></a>
+            <article>
+              <a href="#"><h4>Bier: Barrel: Time (2018)</h4></a>
+              <p>
+                Voor Beer: Barrel: Time 2018 kozen we een blend van onze stevige
+                recepten die bestond uit OWK gerijpt in Willett Bourbon vaten
+                gedurende 20 maanden,… (Ellipses) gerijpt in Heaven Hill vaten
+                gedurende 23 maanden en Derivation Blend # 3 gerijpt in Knob
+                Creek vaten voor 17 maanden.
+              </p>
+            </article>
+            <article>
+              <a href="#"><h4>Blauwe Suede Shews</h4></a>
+              <p>14% Oranjebloesem Honingwijn met Wilde Bosbessen en Cashew</p>
+            </article>
+          </div>
+        </aside>
+      </main>
+      <footer>
+        <div class="main_footer">
+          Deze website is gemaakt door Roel met dank aan Winc Academy
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

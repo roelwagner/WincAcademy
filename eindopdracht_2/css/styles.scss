@@ -1,0 +1,227 @@
+@import "constants";
+/*Global*/
+* {
+  padding: 0px;
+  margin: 0px;
+  font-family: "Actor";
+}
+body {
+  background-color: $backgroundcolor;
+}
+
+h1,
+p {
+  font-size: 1em;
+  line-height: 1.7em;
+}
+
+section {
+  max-width: 1100px;
+  margin: 20px auto;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+}
+/*Testimonial*/
+
+.testimonial {
+  min-width: 280px;
+  max-width: 300px;
+  margin: 20px;
+  position: relative;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.3);
+
+  &__content {
+    @include flexCenter();
+    background: linear-gradient(
+      $testimonialbackground 65%,
+      $testimonialfooterbackground 35%
+    );
+    border-radius: 10px;
+    flex-direction: column;
+
+    &__text {
+      margin: 30px 30px -20px;
+      color: $contenttextcolor;
+    }
+
+    &__profiel-foto {
+      @include flexCenter();
+      width: 100%;
+      &__img {
+        width: 100px;
+        height: auto;
+        border: 4px solid $testimonialbackground;
+        border-radius: 50%;
+      }
+    }
+    &__footer {
+      @include flexCenter();
+      flex-direction: column;
+      width: 100%;
+      color: $testimonialbackground;
+      border-radius: 0px 0px 10px 10px;
+      &__header {
+        font-weight: 100;
+        padding-top: 10px;
+        text-transform: uppercase;
+      }
+      &__text {
+        padding-bottom: 20px;
+        color: $testimonialcontentfootertext;
+      }
+    }
+
+    &__button {
+      padding: 10px;
+      z-index: -1;
+      transition: all 100ms ease-in;
+    }
+
+    &::after {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+      background-color: $hoverbackground;
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: all 100ms ease-in;
+    }
+    &:hover {
+      .testimonial__content__button {
+        z-index: 1;
+      }
+      &::after {
+        opacity: 0.8;
+      }
+    }
+  }
+}
+.fab,
+.fas {
+  color: $socialcolor;
+  text-decoration: none;
+  font-size: 0px;
+  position: fixed;
+  right: 0px;
+  padding: 10px;
+  text-align: center;
+  z-index: 2;
+  &::before {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 900;
+    font-size: 20px;
+  }
+}
+.socials__link {
+  color: $socialcolor;
+  text-decoration: none;
+}
+.fa-laptop-code {
+  bottom: 124px;
+  background-color: $blog;
+}
+.fa-twitter {
+  bottom: 93px;
+  background-color: $twitter;
+}
+.fa-linkedin-in {
+  bottom: 62px;
+  background-color: $linkedin;
+}
+.fa-facebook-f {
+  bottom: 31px;
+  background-color: $facebook;
+}
+.fa-github {
+  bottom: 0px;
+  background-color: $github;
+}
+/*Phone*/
+
+@media (max-width: 679px) {
+  .fab,
+  .fas {
+    width: 100%;
+    padding: 7px;
+    font-size: 14px;
+    text-align: center;
+    &::before {
+      padding-right: 15px;
+    }
+  }
+}
+
+/*Tablet*/
+
+@media (min-width: 680px) and(max-width:1019px) {
+  .fab,
+  .fas {
+    width: 100%;
+    padding: 10px;
+    font-size: 15px;
+    text-align: center;
+    &::before {
+      padding-right: 15px;
+    }
+  }
+  .fa-laptop-code {
+    bottom: 160px;
+  }
+  .fa-twitter {
+    bottom: 120px;
+  }
+  .fa-linkedin-in {
+    bottom: 80px;
+  }
+  .fa-facebook-f {
+    bottom: 40px;
+  }
+}
+/*Desktop*/
+@media (min-width: 1020px) {
+  .fab,
+  .fas {
+    transition: font-size 200ms ease-in;
+    &::before {
+      width: 30px;
+      font-size: 25px;
+    }
+  }
+  .fab:hover,
+  .fas:hover {
+    font-size: 20px;
+    &::before {
+      margin-right: 15px;
+    }
+  }
+  .fa-laptop-code {
+    bottom: 300px;
+    background-color: $blog;
+  }
+  .fa-twitter {
+    bottom: 255px;
+    background-color: $twitter;
+  }
+  .fa-linkedin-in {
+    bottom: 210px;
+    background-color: $linkedin;
+  }
+  .fa-facebook-f {
+    bottom: 165px;
+    background-color: $facebook;
+  }
+  .fa-github {
+    bottom: 120px;
+    background-color: $github;
+  }
+}

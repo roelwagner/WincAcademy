@@ -1,0 +1,18 @@
+$backgroundcolor: #c3cfe2;
+$testimonialbackground: #fff;
+$testimonialfooterbackground: #686de0;
+$hoverbackground: #333;
+$contenttextcolor: rgba(0, 0, 0, 0.7);
+$testimonialcontentfootertext: rgba(255, 255, 255, 0.7);
+$socialcolor: #fff;
+$blog: #e17b77;
+$twitter: #00aced;
+$linkedin: #007bb6;
+$facebook: #3b5998;
+$github: #333;
+
+@mixin flexCenter() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

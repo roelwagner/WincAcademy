@@ -1,0 +1,65 @@
+body {
+  background-color: #c3cfe2;
+}
+
+.fab,
+.fas {
+  color: white;
+  text-decoration: none;
+  font-size: 0px;
+  position: fixed;
+  right: 0px;
+  padding: 10px;
+  -webkit-transition: font-size 200ms ease-in;
+  transition: font-size 200ms ease-in;
+}
+
+.fab::before,
+.fas::before {
+  height: 25px;
+  width: 25px;
+  display: inline-block;
+  font-style: normal;
+  font-variant: normal;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  font-weight: 900;
+  font-size: 25px;
+  text-align: center;
+}
+
+.fab:hover,
+.fas:hover {
+  font-size: 20px;
+}
+
+.fab:hover::before,
+.fas:hover::before {
+  margin-right: 25px;
+}
+
+.fa-laptop-code {
+  bottom: 300px;
+  background-color: #e17b77;
+}
+
+.fa-twitter {
+  bottom: 255px;
+  background-color: #00aced;
+}
+
+.fa-linkedin-in {
+  bottom: 210px;
+  background-color: #007bb6;
+}
+
+.fa-facebook-f {
+  bottom: 165px;
+  background-color: #3b5998;
+}
+
+.fa-github {
+  bottom: 120px;
+  background-color: #333;
+}
+/*# sourceMappingURL=styles.css.map */

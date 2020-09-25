@@ -1,0 +1,25 @@
+/*Colors*/
+
+$textColor: #090b08;
+$bodyBkgColor: #ecffe9;
+$borderColor: #000;
+$titleLine: $borderColor;
+$shadowColor: rgba(0, 0, 0, 0.75);
+$headerBkgColor: #c0eea9;
+$btnBkgColor: $headerBkgColor;
+$heroBkgColor: #97d279;
+$aboutBkgColor: $heroBkgColor;
+$btnHoverBkgColor: $borderColor;
+$btnHoverColor: #fff;
+
+/*Spacing*/
+
+$stdPad: 20px !default;
+
+/*Mixins*/
+
+@mixin sectionText() {
+  max-width: 700px;
+  text-align: center;
+  padding: $stdPad;
+}

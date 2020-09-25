@@ -1,0 +1,11 @@
+console.log("Hello Winc Academy");
+let firstName = "Roel";
+console.log(firstName);
+console.log(4 + 4);
+console.log("4" + "4");
+console.log(1 + 2 + 3 + 4);
+console.log(10 - 6);
+console.log(3 * 4);
+console.log(15 / 5);
+console.log(8 % 3);
+let age = "32";
