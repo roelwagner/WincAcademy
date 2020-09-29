@@ -1,0 +1,56 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+h1 {
+  font-size: 6rem;
+}
+.wrapper__buttons {
+  position: absolute;
+  top: 0%;
+  left: 25%;
+  width: 50%;
+  margin-top: 20px;
+}
+.wrapper__buttons__form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.fa-bars {
+  font-size: 2rem;
+  margin: 20px 20px;
+}
+
+.list__item {
+  list-style: none;
+  padding: 20px;
+  width: 0px;
+  opacity: 0;
+  transition: all 500ms ease-out;
+  font-size: 1rem;
+}
+.list__item--active {
+  opacity: 1;
+  width: 200px;
+}
+
+.grey {
+  background-color: lightgrey;
+}
+
+.red {
+  background-color: salmon;
+}
+.orange {
+  background-color: lightsalmon;
+}
+.purple {
+  background-color: pink;
+}
+.green {
+  background-color: lightgreen;
+}
+.background__color__text {
+  text-align: center;
+}
