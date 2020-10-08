@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/e63b30511c.js"
+      crossorigin="anonymous"
+    ></script>
+    <script defer src="movies.js"></script>
+    <script defer src="script.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Actor"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Filmzoeker</title>
+  </head>
+  <!-- 
+    Ik ben zo vrij geweest om BEM even over te slaan deze opdracht.
+    Voornamelijk omdat ik er niet aan had gedacht en
+    geen zin meer had om alles aan te passen alleen voor het zicht. :]
+   -->
+  <body>
+    <header id="main__header">
+      <div id="app">
+        <div id="wrapper">
+          <!-- Make sure data-text equals the text you put inside the tags. -->
+          <h1
+            class="glitch"
+            data-text="
+      Filmzoeker"
+          >
+            Filmzoeker
+          </h1>
+        </div>
+      </div>
+      <div class="searchbar">
+        <input type="text" id="input" value="" />
+        <i class="fas fa-search"></i>
+      </div>
+    </header>
+    <nav class="filter__options">
+      <div class="radio">
+        <input type="radio" name="filter" id="new" value="Latest" /><label
+          for="latest"
+        >
+          Latest Movies</label
+        >
+      </div>
+      <div class="radio">
+        <input
+          type="radio"
+          name="filter"
+          id="avengers"
+          value="Avengers"
+        /><label for="avengers"> Avengers</label>
+      </div>
+      <div class="radio">
+        <input type="radio" name="filter" id="xmen" value="X-Men" /><label
+          for="x-men"
+        >
+          X-men</label
+        >
+      </div>
+      <div class="radio">
+        <input
+          type="radio"
+          name="filter"
+          id="princess"
+          value="Princess"
+        /><label for="princess"> Princess</label>
+      </div>
+      <div class="radio">
+        <input type="radio" name="filter" id="batman" value="Batman" /><label
+          for="batman"
+        >
+          Batman</label
+        >
+      </div>
+    </nav>
+    <main>
+      <ul id="movie__list"></ul>
+    </main>
+  </body>
+</html>

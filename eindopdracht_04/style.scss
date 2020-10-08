@@ -1,0 +1,148 @@
+* {
+  padding: 0px;
+  margin: 0px;
+}
+
+body {
+  background-color: #151515;
+  color: white;
+  width: 80%;
+  margin: 0px auto;
+  font-family: "Actor";
+}
+
+#main__header {
+  text-align: center;
+  padding: 20px;
+}
+
+#movie__list {
+  list-style: none;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-evenly;
+  .film {
+    margin-top: 20px;
+    transition: transform 100ms ease-out;
+    a {
+      img {
+        border: 1px solid #202020;
+        height: 270px;
+        width: 180px;
+      }
+    }
+    &:hover {
+      position: relative;
+      transform: scale(1.1);
+    }
+  }
+}
+
+// Code van Isaac Doud (https://codepen.io/cipherbeta)
+// Aangepast voor irritatiegrens
+@mixin glitchCopy {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch {
+  position: relative;
+  text-align: center;
+  color: white;
+  font-size: 4em;
+  letter-spacing: 0.5em;
+  animation: glitch-skew s 5s linear alternate-reverse;
+
+  &::after {
+    @include glitchCopy;
+    left: -2px;
+    text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+    animation: glitch-anim2 1s 5s linear alternate-reverse;
+  }
+}
+@keyframes glitch-anim2 {
+  $steps: 20;
+  @for $i from 0 through $steps {
+    #{percentage($i*(1/$steps))} {
+      clip: rect(random(100) + px, 9999px, random(100) + px, 0);
+      transform: skew((random(100) / 100) + deg);
+    }
+  }
+}
+
+/* - - - - - MEDIA - - - - - */
+//Phone
+@media (max-width: 549px) {
+  .glitch {
+    font-size: 2.5em;
+    letter-spacing: normal;
+  }
+  .searchbar {
+    #input {
+      width: 80%;
+      margin-top: 15px;
+    }
+    .fa-search {
+      display: none;
+    }
+  }
+  .filter__options {
+    .radio {
+      margin: 5px 0px;
+    }
+  }
+}
+
+//Tablet
+@media (min-width: 550px) and(max-width:1019px) {
+  .glitch {
+    font-size: 4em;
+    letter-spacing: normal;
+  }
+  .searchbar {
+    #input {
+      width: 80%;
+      margin-top: 15px;
+    }
+    .fa-search {
+      display: none;
+    }
+  }
+  .filter__options {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+  }
+}
+
+//Desktop
+
+@media (min-width: 1020px) {
+  .searchbar {
+    position: absolute;
+    top: 90px;
+    right: 12%;
+    #input {
+      width: 0px;
+      opacity: 0;
+      transition: width 500ms ease-in-out;
+    }
+    .fa-search {
+      color: white;
+      font-size: 1rem;
+    }
+  }
+  .searchbar:hover #input {
+    width: 150px;
+    opacity: 1;
+  }
+  .filter__options {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-evenly;
+  }
+}

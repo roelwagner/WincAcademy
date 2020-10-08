@@ -1,0 +1,8 @@
+.input {
+  transform: scale(0);
+}
+
+.searchbar:hover #input {
+  transform: scale(1);
+  transition: 500ms ease-out;
+}
