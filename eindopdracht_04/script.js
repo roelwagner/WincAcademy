@@ -50,7 +50,7 @@ addEventListeners();
 
 // searchbar and reset
 const input = document.querySelector("#input");
-const x = () => {
+const search = () => {
   const test = input.value.toLowerCase();
   if (test.includes("ve")) {
     filterMovies("Avengers");
@@ -64,11 +64,8 @@ const x = () => {
     addMoviesToDom(movies);
   }
 };
-const reset = () => {
-  addMoviesToDom(movies);
-};
 input.addEventListener("keypress", function (e) {
   if (e.key === "Enter") {
-    x();
+    search();
   }
 });
