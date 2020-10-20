@@ -1,6 +1,9 @@
-let test = [];
+const fetch = require("node-fetch");
 
-test.push("test");
-test.push("test");
+const baseUrl = "https://jsonbox.io/box_02b776bf08e6069b4b28";
 
-console.log(test);
+const getData = async (data) => {
+  const result = await fetch(`${baseUrl}`);
+  const json = await result.json();
+  console.log(json);
+};

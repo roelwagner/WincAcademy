@@ -1,0 +1,23 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+
+.wrapper {
+  width: 70%;
+  margin: 50px auto;
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+.charizard {
+  padding: 15px;
+  width: 100px;
+  align-self: center;
+}
+
+.pokemon-info {
+  margin-top: 50px;
+  align-self: center;
+}
