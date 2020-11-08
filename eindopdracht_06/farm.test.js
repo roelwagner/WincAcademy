@@ -4,6 +4,7 @@ const {
     get_total_yield,
     get_costs_for_crop,
     get_revenue_for_crop,
+    get_profit_for_crop
 } = require("./farm");
 
 describe("get_yield_for_plant", () => {
@@ -80,7 +81,7 @@ describe("get_revenue_for_crop", () => {
         name: "corn",
         yield: 30,
         costs: 1,
-        sale_price: 4,
+        sale_price: 2,
     };
 
     const input = {
@@ -88,7 +89,25 @@ describe("get_revenue_for_crop", () => {
         num_crops: 10,
     };
 
-    test("Get the revenue for the crop total", () => {
-        expect(get_revenue_for_crop(input)).toBe(40);
+    test("Get the revenue for the crop total without outside influences", () => {
+        expect(get_revenue_for_crop(input)).toBe(600);
+    });
+});
+
+describe("get_profit_for_crop", () => {
+    const corn = {
+        name: "corn",
+        yield: 30,
+        costs: 1,
+        sale_price: 2,
+    };
+
+    const input = {
+        crop: corn,
+        num_crops: 10,
+    };
+
+    test("Get the profits for a crop without outside influences", () => {
+        expect(get_profit_for_crop(input)).toBe(590);
     });
 });
