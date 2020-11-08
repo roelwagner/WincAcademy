@@ -4,7 +4,8 @@ const {
     get_total_yield,
     get_costs_for_crop,
     get_revenue_for_crop,
-    get_profit_for_crop
+    get_profit_for_crop,
+    get_total_profit,
 } = require("./farm");
 
 describe("get_yield_for_plant", () => {
@@ -79,7 +80,7 @@ describe("get_costs_for_crop", () => {
 describe("get_revenue_for_crop", () => {
     const corn = {
         name: "corn",
-        yield: 30,
+        yield: 3,
         costs: 1,
         sale_price: 2,
     };
@@ -90,14 +91,14 @@ describe("get_revenue_for_crop", () => {
     };
 
     test("Get the revenue for the crop total without outside influences", () => {
-        expect(get_revenue_for_crop(input)).toBe(600);
+        expect(get_revenue_for_crop(input)).toBe(60);
     });
 });
 
 describe("get_profit_for_crop", () => {
     const corn = {
         name: "corn",
-        yield: 30,
+        yield: 3,
         costs: 1,
         sale_price: 2,
     };
@@ -108,6 +109,28 @@ describe("get_profit_for_crop", () => {
     };
 
     test("Get the profits for a crop without outside influences", () => {
-        expect(get_profit_for_crop(input)).toBe(590);
+        expect(get_profit_for_crop(input)).toBe(50);
     });
 });
+
+describe("get_total_profit", () => {
+    test("Calculate total profits of multiple crops", () => {
+        const corn = {
+            name: "corn",
+            yield: 3,
+            costs: 1,
+            sale_price: 4,
+        };
+        const pumpkin = {
+            name: "pumpkin",
+            yield: 4,
+            costs: 2,
+            sale_price: 7,
+        };
+        const crops = [
+            { crop: corn, num_crops: 5 },
+            { crop: pumpkin, num_crops: 2 },
+        ];
+        expect(get_total_profit({ crops })).toBe(107);
+    })
+})
