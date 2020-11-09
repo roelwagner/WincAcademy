@@ -1,5 +1,17 @@
-const get_yield_for_plant = (crop) => {
-    return crop.yield;
+const get_yield_for_plant = (crop, environmentalFactor) => {
+    const sunFactorPercentage = crop.factors.sun[environmentalFactor.sun] / 100 + 1;
+    const windFactorPercentage = crop.factors.wind[environmentalFactor.wind] / 100 + 1;
+    const windInFactor = "wind" in environmentalFactor;
+    const sunInFactor = "sun" in environmentalFactor;
+    if((sunInFactor) && (windInFactor === false)){
+        return crop.yield * sunFactorPercentage;
+    } else if((sunInFactor === false) && (windInFactor)){
+        return crop.yield * windFactorPercentage;
+    } else if((sunInFactor === false) && (windInFactor === false)){
+        return crop.yield;
+    } else {
+        return (crop.yield * sunFactorPercentage) * windFactorPercentage;
+    }
 }
 
 const get_yield_for_crop = (input) => {
