@@ -1,10 +1,5 @@
-const findNeedle = function(words, search) {
-    
-    const test = words.indexOf(search);
-
-    console.log(test);
+function sum(...arg){
+    return arg.reduce((a, b) => a + b, 0) 
 }
 
-const words = ["house", "train", "slide", "needle", "book"];
-
-findNeedle(words);
+console.log(sum(1,2,3,4,5,6,7,8,9,10))
