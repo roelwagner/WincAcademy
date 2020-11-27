@@ -3,20 +3,18 @@ import ListItem from "./ListItem";
 
 function List(props){
 
-    console.log(Object.values(props.items))
-
-
-    const shoppingList = Array.from(props.items).map(item => {
+    const list = Array.from(props.items).map(item => {
         return <ListItem 
                     key={item.id} 
-                    item={item} 
-                    handleClickGroceryItem={props.handleClickGroceryItem} 
+                    item={item}
+                    handleClickGroceryItem={props.handleClickGroceryItem}
+                    readonly={props.readonly}
                 />
     })
 
     return(
-        <ul>
-            {shoppingList}
+        <ul>    
+            {list}
         </ul>
     )
 }

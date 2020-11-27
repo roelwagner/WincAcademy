@@ -11,3 +11,51 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+.wrapper{
+  width: 80%;
+  margin: 0px auto;
+}
+.header{
+  text-align: center;
+  padding: 1px;
+  margin: 0px 40px;
+  color: white;
+  background-color: rgb(40,34,50);
+  font-size: 1.5rem;
+}
+.contentheader{
+  text-align: center;
+}
+.content{
+  display: flex;
+  justify-content: space-evenly;
+}
+.list{
+  width: 50%;
+  padding-right: 40px;
+}
+.list ul {
+  list-style: none;
+}
+.list > ul > li{
+  border-bottom: 2px solid white;
+  font-weight: 500;
+  color: white;
+  padding: 5px;
+}
+.grocerylist > ul > :nth-child(odd){
+  background-color: rgba(229, 134, 132, 0.726);
+}
+.grocerylist > ul > :nth-child(even){
+  background-color: rgba(229, 134, 132, 0.322);
+}
+.shoppingcartlist > ul > :nth-child(odd){
+  background-color: #4ba2cbb6;
+}
+.shoppingcartlist > ul > :nth-child(even){
+  background-color: #4ba2cb71;
+}
+.list-item{
+  display: flex;
+  justify-content: space-between;
+}
