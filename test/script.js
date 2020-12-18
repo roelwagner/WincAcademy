@@ -1,5 +1,23 @@
-function sum(...arg){
-    return arg.reduce((a, b) => a + b, 0) 
+const buttons = [...document.querySelectorAll(".button")];
+const list = document.querySelector("#list");
+
+const getLandenLijst = () => {
+    const countrieList = randomPersonData.map(person => {
+        list.appendChild(document.createElement("li")).textContent = person.region;
+    })
 }
 
-console.log(sum(1,2,3,4,5,6,7,8,9,10))
+const something = (event) => {
+    list.innerHTML = "";
+    const button = event.target.textContent;
+    switch(button){
+        case "Landenlijst":
+            getLandenLijst();
+            break;
+        default:
+            console.log(button);
+            break;
+    }
+}
+
+buttons.forEach(button => button.addEventListener("click", something));
