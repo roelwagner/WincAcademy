@@ -31,3 +31,7 @@
 .song-row:nth-child(odd){
   background-color:#c6ebc9;
 }
+.trash{
+  text-align: center;
+  width: 3%;
+}

@@ -34,6 +34,14 @@ class SongOverview extends Component {
         }
     }
 
+    delSong = event => {
+        const songList = [...this.state.songs]
+        const delID = parseInt(event.target.id);
+        const songToDelete = songList.find(song => song.id === delID);
+        const newSongList = songList.filter(song => song !== songToDelete);
+        this.setState({songs: newSongList})
+    }
+
     render() {
         return (
             <div className="wrapper">
@@ -47,7 +55,7 @@ class SongOverview extends Component {
                                 <th className="song-header__item">Genre</th>
                                 <th className="song-header__item">Rating</th>
                             </tr>
-                            <SongList songs={this.state.songs}/>
+                            <SongList songs={this.state.songs} delSong={this.delSong} />
                         </tbody>
                     </table>
             </div>
