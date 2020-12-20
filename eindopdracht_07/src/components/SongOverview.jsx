@@ -17,7 +17,7 @@ class SongOverview extends Component {
 
     addSong = event => {
         event.preventDefault();
-        const id = this.state.songs.length + 1;
+        const id = Math.floor(Math.random() * 999999999999999 + 1)
         const title = event.target.previousSibling.previousSibling.previousSibling.previousSibling.value;
         const artist = event.target.previousSibling.previousSibling.previousSibling.value;
         const genre = event.target.previousSibling.previousSibling.value;
