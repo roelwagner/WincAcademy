@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Header from "./Header";
 import SongForm from "./SongForm";
 import SongList from "./SongList";
+import SortSongs from "./SortSongs";
 
 class SongOverview extends Component {
 
@@ -9,17 +10,18 @@ class SongOverview extends Component {
         super()
         this.state = {
             songs: [
-                {id: 1, title: "Ring of fire", artist: "Johnny Cash", genre: "Country", rating: 5},
-                {id: 2, title: "the Dock of the Bay", artist: "Ottis Redding", genre: "Soul", rating: 5},
-            ]
+                {id: 1, title: "a ring of fire", artist: "johnny cash", genre: "country", rating: 4},
+                {id: 2, title: "the dock of the bay", artist: "ottis redding", genre: "soul", rating: 5},
+            ],
+            sortFactor: "Artist",
         }
     }
 
     addSong = event => {
         event.preventDefault();
         const id = this.state.songs.length + 1;
-        const title = event.target.previousSibling.previousSibling.previousSibling.previousSibling.value;
-        const artist = event.target.previousSibling.previousSibling.previousSibling.value;
+        const title = event.target.previousSibling.previousSibling.previousSibling.previousSibling.value.toLowerCase();
+        const artist = event.target.previousSibling.previousSibling.previousSibling.value.toLowerCase();
         const genre = event.target.previousSibling.previousSibling.value;
         const rating = event.target.previousSibling.value;
         
@@ -42,11 +44,33 @@ class SongOverview extends Component {
         this.setState({songs: newSongList})
     }
 
+    setSortFactor = event => {
+        const sortFactor = event.target.value
+        this.setState({sortFactor: sortFactor});
+    }
+
+    sortSongList = event => {
+        const currentFilter = event.target.value;
+
+        const newList = [...this.state.songs];
+        if(this.state.sortFactor === "Artist" && currentFilter === "Ascending"){
+            newList.sort((a,b) => (a.artist >= b.artist) ? 1 : -1)
+        } else if (this.state.sortFactor === "Artist" && currentFilter === "Descending"){
+            newList.sort((a,b) => (a.artist >= b.artist) ? -1 : 1)
+        }else if(this.state.sortFactor === "Title" && currentFilter === "Ascending"){
+            newList.sort((a,b) => (a.artist >= b.artist) ? 1 : -1)
+        } else if (this.state.sortFactor === "Title" && currentFilter === "Descending"){
+            newList.sort((a,b) => (a.artist >= b.artist) ? -1 : 1)
+        }
+        this.setState({songs: newList})
+    }
+
     render() {
         return (
             <div className="wrapper">
                 <Header />
                 <SongForm addSong={this.addSong}/>
+                <SortSongs setSortFactor={this.setSortFactor} sortSongList={this.sortSongList}/>
                     <table style={{width: "100%"}}>
                         <tbody>
                             <tr className="song-header">  
