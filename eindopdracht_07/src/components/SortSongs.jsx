@@ -1,10 +1,20 @@
 import React from "react";
 
-const SortSongs = () => {
+const SortSongs = props => {
     return(
-        <option>
-            <select>Someting</select>
-        </option>
+        <div>
+            <label>Sort:</label>
+            &nbsp;
+            <select onChange={props.setSortFactor}>
+                <option>Artist</option>
+                <option>Title</option>
+            </select>
+            &nbsp;
+            <select onChange={props.sortSongList}>
+                <option>Ascending</option>
+                <option>Descending</option>
+            </select>
+        </div>
     );
 }
 
