@@ -35,3 +35,7 @@
   text-align: center;
   width: 3%;
 }
+.options-menu{
+  display: flex;
+  justify-content: space-evenly;
+}
