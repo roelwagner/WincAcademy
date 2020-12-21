@@ -3,17 +3,17 @@ import React from "react";
 const SongForm = (props) => {
     return(
         <div>
-            <form className="songform">
+            <form id="songform" className="songform">
                 <input type="text" name="title" placeholder="Title" />
                 <input type="text" name="artist" placeholder="Artist" />
                 <select id="genre" name="genre">
-                    <option value="Pop">Pop</option>
-                    <option value="Rock">Rock</option>
-                    <option value="Country">Country</option>
-                    <option value="Classic">Classic</option>
-                    <option value="Jazz">Jazz</option>
-                    <option value="Soul">Soul</option>
-                    <option value="Hip-Hop">Hip-Hop</option>
+                    <option value="pop">pop</option>
+                    <option value="rock">rock</option>
+                    <option value="country">country</option>
+                    <option value="classic">classic</option>
+                    <option value="jazz">jazz</option>
+                    <option value="soul">soul</option>
+                    <option value="hip-hop">hip-hop</option>
                 </select>  
                 <select id="rating" name="rating">
                     <option value="1">1</option>
