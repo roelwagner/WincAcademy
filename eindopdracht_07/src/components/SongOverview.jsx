@@ -27,7 +27,12 @@ class SongOverview extends Component {
         
         if((artist!=="")&&(artist!== null)){
             if((title!=="")&&(title!== null)){
-                const song = {id: id, title: title, artist: artist, genre: genre, rating: rating};
+                const song = {
+                    id: id, 
+                    title: title.toLowerCase(), 
+                    artist: artist.toLowerCase(), 
+                    genre: genre, rating: rating
+                };
                 const newList = [song, ...this.state.songs];
                 this.setState({songs: newList})
             }
@@ -74,7 +79,7 @@ class SongOverview extends Component {
                     <table style={{width: "100%"}}>
                         <tbody>
                             <tr className="song-header">  
-                                <th className="song-header__item">Song</th>
+                                <th className="song-header__item">Title</th>
                                 <th className="song-header__item">Artist</th>
                                 <th className="song-header__item">Genre</th>
                                 <th className="song-header__item">Rating</th>

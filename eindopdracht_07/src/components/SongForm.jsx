@@ -3,7 +3,7 @@ import React from "react";
 const SongForm = (props) => {
     return(
         <div>
-            <form className="songform">
+            <form id="songform" className="songform">
                 <input type="text" name="title" placeholder="Title" />
                 <input type="text" name="artist" placeholder="Artist" />
                 <select id="genre" name="genre">
