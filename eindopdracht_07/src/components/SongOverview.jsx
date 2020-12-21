@@ -64,9 +64,9 @@ class SongOverview extends Component {
         } else if (this.state.sortFactor === "Artist" && currentFilter === "Descending"){
             newList.sort((a,b) => (a.artist >= b.artist) ? -1 : 1)
         }else if(this.state.sortFactor === "Title" && currentFilter === "Ascending"){
-            newList.sort((a,b) => (a.artist >= b.artist) ? 1 : -1)
+            newList.sort((a,b) => (a.title >= b.title) ? 1 : -1)
         } else if (this.state.sortFactor === "Title" && currentFilter === "Descending"){
-            newList.sort((a,b) => (a.artist >= b.artist) ? -1 : 1)
+            newList.sort((a,b) => (a.title >= b.title) ? -1 : 1)
         }
         this.setState({songs: newList})
     }
