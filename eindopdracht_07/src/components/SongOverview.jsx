@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { v4 as uuidv4 } from 'uuid';
 import Header from "./Header";
 import SongForm from "./SongForm";
 import SongList from "./SongList";
@@ -10,16 +11,17 @@ class SongOverview extends Component {
         super()
         this.state = {
             songs: [
-                {id: 1, title: "a ring of fire", artist: "johny cash", genre: "country", rating: 4},
-                {id: 2, title: "the dock of the bay", artist: "ottis redding", genre: "soul", rating: 5},
+                {id: uuidv4(), title: "a ring of fire", artist: "johny cash", genre: "country", rating: "4"},
+                {id: uuidv4(), title: "the dock of the bay", artist: "ottis redding", genre: "soul", rating: "5"},
             ],
-            sortFactor: "Artist",
+            filterGenre: "all",
+            filterRating: "all",
         }
     }
 
     addSong = event => {
         event.preventDefault();
-        const id = Math.floor(Math.random() * 999999999999999 + 1)
+        const id = uuidv4();
         const title = event.target.previousSibling.previousSibling.previousSibling.previousSibling.value;
         const artist = event.target.previousSibling.previousSibling.previousSibling.value;
         const genre = event.target.previousSibling.previousSibling.value;
@@ -31,7 +33,8 @@ class SongOverview extends Component {
                     id: id, 
                     title: title.toLowerCase(), 
                     artist: artist.toLowerCase(), 
-                    genre: genre, rating: rating
+                    genre: genre, 
+                    rating: rating
                 };
                 const newList = [song, ...this.state.songs];
                 newList.sort((a,b) => (a.genre >= b.genre) ? 1 : -1);
@@ -57,8 +60,8 @@ class SongOverview extends Component {
 
     sortSongList = event => {
         const currentFilter = event.target.value;
-
         const newList = [...this.state.songs];
+
         if(this.state.sortFactor === "Artist" && currentFilter === "Ascending"){
             newList.sort((a,b) => (a.artist >= b.artist) ? 1 : -1)
         } else if (this.state.sortFactor === "Artist" && currentFilter === "Descending"){
@@ -71,15 +74,45 @@ class SongOverview extends Component {
         this.setState({songs: newList})
     }
 
+    setFilterGenre = event => {
+        const genre = event.target.value;
+        this.setState({filterGenre: genre})
+    }
+
+    setFilterRating = event => {
+        const rating = event.target.value;
+        this.setState({filterRating: rating})
+    }
+    
+    filteredSongs = () => {
+        const genreList = [...this.state.songs].filter(song => song.genre === this.state.filterGenre);
+        const ratingList = [...this.state.songs].filter(song => song.rating === this.state.filterRating);
+        const filteredList = genreList.filter(song => song.rating === this.state.filterRating);
+
+        if(this.state.filterGenre === "all" && this.state.filterRating === "all"){
+            return this.state.songs;
+        } else if(this.state.filterRating === "all"){
+            return this.state.filterGenre === "all" ? this.state.songs : genreList;
+        } else if(this.state.filterGenre === "all"){
+            return this.state.filterRating === "all" ? this.state.songs : ratingList;
+        } else {
+            return filteredList;
+        }        
+    }
+
     render() {
         return (
             <div className="wrapper">
                 <Header />
                 <SongForm addSong={this.addSong}/>
+                <hr className="optionsline top" />
                 <OptionsMenu 
                     setSortFactor={this.setSortFactor} 
                     sortSongList={this.sortSongList}
+                    setFilterGenre={this.setFilterGenre}
+                    setFilterRating={this.setFilterRating}
                 />
+                <hr className="optionsline bottom" />
                     <table style={{width: "100%"}}>
                         <tbody>
                             <tr className="song-header">  
@@ -89,7 +122,7 @@ class SongOverview extends Component {
                                 <th className="song-header__item">Rating</th>
                             </tr>
                             <SongList 
-                                songs={this.state.songs} 
+                                songs={this.filteredSongs} 
                                 delSong={this.delSong} 
                             />
                         </tbody>
