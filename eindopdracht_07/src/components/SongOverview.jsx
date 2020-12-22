@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { v4 as uuidv4 } from 'uuid';
-import Header from "./Header";
 import SongForm from "./SongForm";
 import SongList from "./SongList";
 import OptionsMenu from "./OptionsMenu";
@@ -103,7 +102,6 @@ class SongOverview extends Component {
     render() {
         return (
             <div className="wrapper">
-                <Header />
                 <SongForm addSong={this.addSong}/>
                 <hr className="optionsline top" />
                 <OptionsMenu 
@@ -113,7 +111,7 @@ class SongOverview extends Component {
                     setFilterRating={this.setFilterRating}
                 />
                 <hr className="optionsline bottom" />
-                    <table style={{width: "100%"}}>
+                    <table>
                         <tbody>
                             <tr className="song-header">  
                                 <th className="song-header__item">Title</th>
