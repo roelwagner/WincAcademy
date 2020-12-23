@@ -1,6 +1,6 @@
 import Header from "./components/Header";
 import Nav from "./components/Nav";
-import Home from "./components/Home";
+import SongOverview from "./components/SongOverview";
 import About from "./components/About";
 
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
@@ -15,7 +15,7 @@ const App = () => {
         <Nav />
         <hr />
         <Switch>
-          <Route path="/" exact component={Home} />
+          <Route path="/" exact component={SongOverview} />
           <Route path="/about" component={About} />
         </Switch>
       </div>
