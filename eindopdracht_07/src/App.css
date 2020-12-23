@@ -2,7 +2,7 @@
   padding: 0;
   margin: 0;
 }
-.App{
+.wrapper{
   width: 75%;
   margin: 0 auto;
 }
@@ -11,26 +11,6 @@
   background-color: #70af85;
   color: white;
   padding: 30px;
-}
-.main-nav{
-  display: flex;
-  align-items: center;
-  padding: 5px; 
-}
-.nav-links{
-  display: flex;
-  justify-content: space-between;
-  margin: 0px 50px;
-  width: 100%;
-  list-style-type: none;
-}
-.nav-links > * {
-  color: black;
-  font-weight: 500;
-  text-decoration: none;
-}
-.nav-links > * :hover {
-  text-decoration: underline;
 }
 .songform{
   display: flex;
@@ -71,11 +51,4 @@
 }
 .bottom {
   margin-bottom: 20px;
-}
-table{
-  width: 100%;
-}
-.aboutme{
-  margin-top: 30px;
-  text-align: center;
 }

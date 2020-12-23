@@ -3,7 +3,7 @@ import React from "react";
 const Filter = props => {
     return(
         <div>
-            Filter:&nbsp;
+            Filter:
             <select onChange={props.setFilterGenre} name="genre">
                     <option value="all">all</option>
                     <option value="pop">pop</option>
