@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import { v4 as uuidv4 } from 'uuid';
-import Header from "./Header";
 import SongForm from "./SongForm";
 import SongList from "./SongList";
 import OptionsMenu from "./OptionsMenu";
@@ -14,6 +13,7 @@ class SongOverview extends Component {
                 {id: uuidv4(), title: "a ring of fire", artist: "johny cash", genre: "country", rating: "4"},
                 {id: uuidv4(), title: "the dock of the bay", artist: "ottis redding", genre: "soul", rating: "5"},
             ],
+            sortFactor: "Artist",
             filterGenre: "all",
             filterRating: "all",
         }
@@ -47,11 +47,10 @@ class SongOverview extends Component {
 
     delSong = event => {
         const songList = [...this.state.songs]
-        const delID = parseInt(event.target.id);
+        const delID = event.target.id
         const songToDelete = songList.find(song => song.id === delID);
         const newSongList = songList.filter(song => song !== songToDelete);
         this.setState({songs: newSongList})
-        console.log("test")
     }
 
     setSortFactor = event => {
@@ -104,7 +103,6 @@ class SongOverview extends Component {
     render() {
         return (
             <div className="wrapper">
-                <Header />
                 <SongForm addSong={this.addSong}/>
                 <hr className="optionsline top" />
                 <OptionsMenu 
@@ -114,7 +112,7 @@ class SongOverview extends Component {
                     setFilterRating={this.setFilterRating}
                 />
                 <hr className="optionsline bottom" />
-                    <table style={{width: "100%"}}>
+                    <table>
                         <tbody>
                             <tr className="song-header">  
                                 <th className="song-header__item">Title</th>

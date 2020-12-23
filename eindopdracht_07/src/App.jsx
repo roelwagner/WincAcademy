@@ -2,7 +2,6 @@ import Header from "./components/Header";
 import Nav from "./components/Nav";
 import SongOverview from "./components/SongOverview";
 import About from "./components/About";
-
 import { BrowserRouter as Router, Switch, Route} from "react-router-dom";
 
 import './App.css';
