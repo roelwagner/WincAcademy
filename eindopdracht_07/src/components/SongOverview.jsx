@@ -51,6 +51,7 @@ class SongOverview extends Component {
         const songToDelete = songList.find(song => song.id === delID);
         const newSongList = songList.filter(song => song !== songToDelete);
         this.setState({songs: newSongList})
+        console.log("test")
     }
 
     setSortFactor = event => {
