@@ -1,6 +1,6 @@
 import React from "react";
 import "./Calendar.css";
-import DayInMonth from "./DayInMonth";
+import DayInMonth from "../DayInMonth";
 
 const divideByDay = appointments => {
   const appointmentsByDay = {};
@@ -14,7 +14,7 @@ const divideByDay = appointments => {
   return appointmentsByDay;
 };
 
-export default ({ appointments }) => {
+const Calender = ({ appointments }) => {
   const appointmentsByDay = divideByDay(appointments);
 
   const daysInMonthJSX = Object.values(
@@ -36,3 +36,5 @@ export default ({ appointments }) => {
     </div>
   );
 };
+
+export default Calender;
