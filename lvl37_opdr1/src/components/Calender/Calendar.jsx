@@ -14,15 +14,16 @@ const divideByDay = appointments => {
   return appointmentsByDay;
 };
 
-const Calender = ({ appointments }) => {
+const Calender = ({ appointments, removeAppointment, moveAppointment }) => {
   const appointmentsByDay = divideByDay(appointments);
 
   const daysInMonthJSX = Object.values(
     appointmentsByDay
-  ).map((appointmentsInDay, index) => (
-    <DayInMonth appointments={appointmentsInDay} key={index} />
-  ));
-
+  ).map((appointmentsInDay, index) => {
+    return(
+      <DayInMonth appointments={appointmentsInDay} key={index} removeAppointment={removeAppointment} moveAppointment={moveAppointment} />
+    )
+  });
   return (
     <div className="calendarview">
       <div className="header">

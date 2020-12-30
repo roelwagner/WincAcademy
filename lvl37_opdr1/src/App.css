@@ -33,3 +33,25 @@ a:visited {
   color: darksalmon;
   outline: none;
 }
+
+.sick{
+  background-color: rgba(255, 1, 1, 0.541);
+}
+
+table{
+  width: 100%;
+  background-color: white;
+  border: 1px solid black;
+}
+th{
+  text-align: left;
+}
+tr:nth-child(even){
+  background-color: lightblue;
+}
+
+div.appointment{
+  display: flex;
+  justify-content: space-between;
+  font-size: smaller;
+}
