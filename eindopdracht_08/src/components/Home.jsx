@@ -1,11 +1,9 @@
-import React from "react";
-import BarChart from "./BarChart";
+import BarGraph from "./BarGraph";
 
-const Home = () => {
-    
+const Home = ({data}) => {
     return (
         <div>
-            <BarChart />
+            <BarGraph data={data} />
         </div>
     );
 }

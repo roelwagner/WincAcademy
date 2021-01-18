@@ -1,12 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 import { createStore } from "redux";
 import { Provider } from "react-redux";
 import allReducers from "./reducers/";
+import Container from './Container';
 
 const store = createStore(
   allReducers,
@@ -16,7 +16,7 @@ const store = createStore(
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App />
+      <Container />
     </Provider>
   </React.StrictMode>,
   document.getElementById('root')

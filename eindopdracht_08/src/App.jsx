@@ -1,11 +1,11 @@
 import './App.css';
 import Home from "./components/Home";
 
-const App = () => {
+const App = ({ data }) => {
 
   return (
     <div className="App">
-      <Home />
+      <Home data={data} />
     </div>
   );
 }
