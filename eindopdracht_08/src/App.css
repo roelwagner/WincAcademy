@@ -1,10 +1,100 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
 .App {
+  margin: 30px auto;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: space-between;
+  width: 85%;
+  font-size: 15px;
+}
+.main-nav {
+  border: 1px solid blue;
+  width: 250px;
+  padding: 10px;
+  margin: 10px;
+  background-color: lightblue;
+}
+.home{
+  text-align: center;
+  margin-bottom: 10px;
+}
+.main-nav-ul{
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  text-align: left;
+}
+li{
+  list-style: none;
+  width: 100px;
+}
+.student__item{
+  display: flex;
+  justify-content: space-between;
+}
+.student-checkbox{
+  padding-left: 20px;
+}
+.students, .student {
+  border: 1px solid brown;
+  padding: 10px;
+  margin: 10px;
+  background-color: lightcoral;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+}
+.image{
+  height: 100px;
+}
+.options{
+  border: 1px solid gold;
+  background-color: lightgoldenrodyellow;
+  width: 250px;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.info{
+  background-color: lightgreen;
+  border: 1px solid green;
+  width: 280px;
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+}
+.all-students{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.chart {
+  border: 1px solid red;
+  margin: 10px;
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 100px;
+  background-color: lightblue;
+}
+.sorttext{
   text-align: center;
 }
-
-.barGraph{
+.table {
+  border: 1px solid red;
+  margin: 10px;
+  width: 100%;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 100px;
+  background-color: lightblue;
+}
+td{
+  text-align: left;
   border: 1px solid black;
-  margin: 0px auto;
-  padding-bottom: 70px;
-  width: 70%;
 }
