@@ -94,6 +94,9 @@ li{
   padding-bottom: 100px;
   background-color: lightblue;
 }
+.tablehead{
+  cursor: pointer;
+}
 td{
   text-align: left;
   border: 1px solid black;

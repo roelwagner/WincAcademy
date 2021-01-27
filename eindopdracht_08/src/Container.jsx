@@ -13,6 +13,7 @@ class Container extends React.Component{
             chart: true,
             bargraph: true,
             sort: "Opdracht",
+            multipleStudents: true
         }
     }
 
@@ -36,6 +37,21 @@ class Container extends React.Component{
         const alteredData = [...data.map(element => element.map(item => {
             if(item.first_name === student){
                 item.active = !item.active;
+            }
+            return item;
+        }))]
+        this.setState({
+            data: alteredData,
+        })
+    }
+
+    handleStudent = event => {
+        const student = event.target.textContent;
+        const alteredData = [...data.map(element => element.map(item => {
+            if(item.first_name !== student){
+                item.active = false;
+            } else{
+                item.active = true;
             }
             return item;
         }))]
@@ -124,6 +140,16 @@ class Container extends React.Component{
         }
     }
 
+    setAllActive = () => {
+        const activateAll = [...this.state.data.map(element => element.map(item => {
+            item.active = true;
+            return item;
+        }))]
+        this.setState({
+            data: activateAll,
+        })
+    }
+
     render(){
         return(
             <div>
@@ -140,6 +166,9 @@ class Container extends React.Component{
                     chart={this.state.chart}
                     sortBy={this.state.sort}
                     sortData={this.sortData}
+                    handleStudent={this.handleStudent}
+                    multipleStudents={this.state.multipleStudents}
+                    setAllActive={this.setAllActive}
                 />
             </div>
         )

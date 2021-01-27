@@ -15,14 +15,27 @@ const AllStudents = ({  data,
                         chart,
                         sortBy, 
                         sortData,
-                        tableData
+                        tableData,
+                        handleStudent,
+                        multipleStudents,
+                        setAllActive
                         }) => {
+    
+    const studentNames = data.map(element => element.map(item => {
+        return item.active ? `${item.first_name} ` : null;
+    }));
+    
     return(
         <div className="students">
-            <Nav data={data} handleChangeActive={handleChangeActive} />
-            <div className="info all-students">
-                All students
-            </div>
+            <Nav 
+                data={data} 
+                handleChangeActive={handleChangeActive} 
+                handleStudent={handleStudent} 
+                setAllActive={setAllActive}
+            />
+            <ul className="info all-students">
+                {studentNames[0]}
+            </ul>
             <Options
                 handleChange={handleChange}
                 difficult={difficult}
@@ -34,7 +47,7 @@ const AllStudents = ({  data,
             />
             {chart ? <Chart 
                 data={data} 
-                multipleStudents={true} 
+                multipleStudents={multipleStudents} 
                 handleChange={handleChange}
                 difficult={difficult}
                 fun={fun}

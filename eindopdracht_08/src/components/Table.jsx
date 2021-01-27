@@ -20,18 +20,18 @@ const Table = ({ tableData, sortBy, sortData}) => {
     }))
     return(
         <div>
-            <p className="sorttext">Gesorteerd op {sortBy}</p>
+            <h1 className="sorttext">Gesorteerd op {sortBy}</h1>
             <table className="table">
                 <tbody>
                     <tr>
-                        <th onClick={sortData}>Voornaam</th>
-                        <th onClick={sortData}>Achternaam</th>
-                        <th onClick={sortData}>Leeftijd</th>
+                        <th onClick={sortData} className="tablehead" >Voornaam</th>
+                        <th onClick={sortData} className="tablehead" >Achternaam</th>
+                        <th onClick={sortData} className="tablehead" >Leeftijd</th>
                         <th>Telefoon</th>
                         <th>Email</th>
-                        <th onClick={sortData}>Opdracht</th>
-                        <th onClick={sortData}>Opdracht leuk</th>
-                        <th onClick={sortData}>Opdracht moeilijk</th>
+                        <th onClick={sortData} className="tablehead" >Opdracht</th>
+                        <th>Opdracht leuk</th>
+                        <th>Opdracht moeilijk</th>
                     </tr>
                     {activeStudents}
                 </tbody>

@@ -15,6 +15,9 @@ const App = ({  data,
                 sortBy, 
                 sortData, 
                 tableData,
+                handleStudent,
+                multipleStudents,
+                setAllActive
                 }) => {  
 
   const names = data[0].map(item => item.first_name);
@@ -36,6 +39,9 @@ const App = ({  data,
                 chart={chart}
                 sortBy={sortBy}
                 sortData={sortData}
+                handleStudent={handleStudent}
+                multipleStudents={multipleStudents}
+                setAllActive={setAllActive}
               />
             </Route>
     })
@@ -57,6 +63,9 @@ const App = ({  data,
               chart={chart}
               sortBy={sortBy}
               sortData={sortData}
+              handleStudent={handleStudent}
+              multipleStudents={multipleStudents}
+              setAllActive={setAllActive}
             />
           </Route>
           {students}

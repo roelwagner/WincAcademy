@@ -16,7 +16,9 @@ const Student = ({  data,
                     chart, 
                     sortBy, 
                     sortData,
-                    tableData
+                    tableData,
+                    handleStudent,
+                    setAllActive
                     }) => {
 
     const studentData = data.map(item => item.find(element => element.first_name === name));
@@ -27,7 +29,12 @@ const Student = ({  data,
 
     return(
         <div className="student">
-            <Nav data={data} handleChangeActive={handleChangeActive} />
+            <Nav 
+                data={data} 
+                handleChangeActive={handleChangeActive} 
+                handleStudent={handleStudent}
+                setAllActive={setAllActive}
+            />
             <div className="info">
                 <span>
                     Naam: {studentInfo("first_name")} {studentInfo("last_name")}<br />

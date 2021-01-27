@@ -10,8 +10,6 @@ import { wincTheme } from "./wincTheme";
 
 const Chart = ({ data, multipleStudents, difficult, fun, bargraph, }) => {
 
-    const tickValues = ["SCRUM", "W1D1-1", "W1D2-1", "W1D2-2", "W1D2-3", "W1D2-4", "W1D2-5", "W1D3-1", "W1D3-2", "W1D3-4", "W1D3-5", "W1D3 - Project - Guess-the-number", "W1D4-1", "W1D4 - Project - Kleurentoggle", "W1D5 - Project - Galgje", "W2D1-1", "W2D1-2", "W2D2-1", "W2D2-2", "W2D2-3", "W2D3-1", "W2D3-2", "W2D3-3", "W2D4-1", "W2D4-2", "W2D4-3", "W2D5 - Project - Filmzoeker", "W3D1-1", "W3D1-2", "W3D1-3", "W3D1-4", "W3D2-1", "W3D2-2", "W3D2-3", "W3D3-1", "W3D3-2", "W3D3-3", "W3D3-4", "W3D4-1", "W3D4-2", "W3D5 - Project - Todo-List", "W4D2-1", "W4D2-2", "W4D2-3", "W4D2-4", "W4D3-1", "W4D3-2", "W4D3-3", "W4D3-4", "W4D3-5", "W4D3 - Project - Next-Level CSS", "W5D4-1", "W5D5 - Project - Lil_Playlist", "W6D1-1", "W6D2-1", "W6D2 - Project - Eindopdracht"];
-
     const activeData = array => {
         const test =  array.map(element => element.filter(item => item.active === true))
         return test;
@@ -23,17 +21,8 @@ const Chart = ({ data, multipleStudents, difficult, fun, bargraph, }) => {
                 return array.reduce((accumulator, item) => item[grade] + accumulator , 0) / array.length;
             }
             const getProject = array => {
-                return array.reduce((accumulator, item) => {
-                    console.log(item.project)
-                    return item.project === accumulator ? null : item.project;
-                })
+                return [...new Set(array.map(item => item.project))][0];
             }
-
-            // const getProject = tickValues => {
-            //     for(let i=0; i <= tickValues; i++){
-            //         return tickValues[i];
-            //     }
-            // }
 
             const getAvgDifficulty = array => {
                 const newDataArray = [];
@@ -72,6 +61,14 @@ const Chart = ({ data, multipleStudents, difficult, fun, bargraph, }) => {
             return dataObject;
         }
     }
+    
+    const getTickValues = input => {
+        if(input[0][0]){
+            return [...new Set(input.map(item => item.project))];
+        }else{
+            return input.project
+        }
+    }
 
     return (
         <div className="chart">
@@ -93,7 +90,7 @@ const Chart = ({ data, multipleStudents, difficult, fun, bargraph, }) => {
                     ]}
                 />
                 <VictoryAxis
-                    tickValues={tickValues}
+                    tickValues={getTickValues(data)}
                     tickLabelComponent={
                         <VictoryLabel 
                             dy={-10}

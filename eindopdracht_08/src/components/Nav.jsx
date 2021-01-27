@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Nav = ({ data, handleChangeActive, }) => {
+const Nav = ({ data, handleChangeActive, handleStudent, setAllActive }) => {
     
     const names = data[0].map(item => item);
     const students = names.map(student => {
@@ -9,9 +9,8 @@ const Nav = ({ data, handleChangeActive, }) => {
                     <Link
                         to={`/${student.first_name}`}
                     >
-                        <li>
+                        <li onClick={handleStudent}>
                             {student.first_name}
-                            
                         </li>
                     </Link>
                     <input
@@ -23,9 +22,10 @@ const Nav = ({ data, handleChangeActive, }) => {
                     />
                 </span>
     })
+
     return(
         <nav className="main-nav">
-            <Link to="/"><p className="home" >All Students</p></Link>
+            <Link to="/"><p className="home" onClick={setAllActive}>All Students</p></Link>
             <ul className="main-nav-ul">
                 {students}
             </ul>
