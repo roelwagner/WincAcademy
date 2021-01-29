@@ -45,9 +45,11 @@ const App = ({  data,
               />
             </Route>
     })
+
   return (
     <Router>
       <main className="App">
+        <header onClick={setAllActive}><h1>STUDENT DASHBOARD</h1></header>
         <Switch>
           <Route path="/" exact>
             <AllStudents 

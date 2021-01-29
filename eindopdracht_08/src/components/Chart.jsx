@@ -29,7 +29,7 @@ const Chart = ({ data, multipleStudents, difficult, fun, bargraph, }) => {
                 array.forEach(item => {
                     const project = getProject(item);
                     const difficulty = getAverage(item, "difficulty");
-                    const newItem = {project: project, difficulty: difficulty, label: project};
+                    const newItem = {project: project, difficulty: difficulty, label: `Opdr. ${project} \n Moeilijk: ${difficulty}`};
                     newDataArray.push(newItem);
                 })
                 return newDataArray;
@@ -39,7 +39,7 @@ const Chart = ({ data, multipleStudents, difficult, fun, bargraph, }) => {
                 array.forEach(item => {
                     const project = getProject(item);
                     const enjoyment = getAverage(item, "enjoyment");
-                    const newItem = {project: project, enjoyment: enjoyment, label: project};
+                    const newItem = {project: project, enjoyment: enjoyment, label: `Opdr. ${project} \n Leuk: ${enjoyment}`};
                     newDataArray.push(newItem);
                 })
                 return newDataArray;
@@ -51,10 +51,10 @@ const Chart = ({ data, multipleStudents, difficult, fun, bargraph, }) => {
             return dataObject;
         } else {
             const difficulty = data.map(item => {
-                return {project: item.project, difficulty: item.difficulty, label: item.project}
+                return {project: item.project, difficulty: item.difficulty, label: `Opdr. ${item.project} \n Leuk: ${item.difficulty}`}
             })
             const enjoyment = data.map(item => {
-                return {project: item.project, enjoyment: item.enjoyment, label: item.project}
+                return {project: item.project, enjoyment: item.enjoyment, label: `Opdr. ${item.project} \n Leuk: ${item.enjoyment}`}
             })
 
             const dataObject = {difficulty: difficulty, enjoyment: enjoyment}
@@ -84,9 +84,13 @@ const Chart = ({ data, multipleStudents, difficult, fun, bargraph, }) => {
                     orientation="horizontal"
                     gutter={20}
                     style={{ border: { stroke: "black" }, title: {fontSize: 14 } }}
+                    // data = {[
+                    //     {name: "Moeilijk", symbool: { fill: "darkblue" }}, kleuren gekozen door mijn zoon
+                    //     {name: "Leuk", symbool: { fill: "lightgreen" }}
+                    // ]}
                     data={[
                     { name: "Moeilijk", symbol: { fill: "#F4511E" } },
-                    { name: "Leuk", symbol: { fill: "#FFF59D" } }
+                    { name: "Leuk", symbol: { fill: "#456268" } }
                     ]}
                 />
                 <VictoryAxis
@@ -110,32 +114,34 @@ const Chart = ({ data, multipleStudents, difficult, fun, bargraph, }) => {
                     tickFormat={[1,2,3,4,5]}
                 />
                 {bargraph ? <VictoryGroup 
-                        offset={4}
+                        offset={6}
                     >
                     {difficult ? <VictoryBar 
+                        labels={({ datum }) => `Name: ${datum.name} score: ${datum.score}`}
                         labelComponent={
-                            <VictoryTooltip 
-                            data={getRightData().difficulty}
-                            />
+                            <VictoryTooltip />
                         }
+                        barWidth={5}
                         data={getRightData().difficulty}
-                        // data={[0, ...getRightData().difficulty]}
                         x={"project"}
                         y={"difficulty"}
                         style={{
+                            // data: { fill: "darkblue"} 
                             data: { fill: "#F4511E" }
                         }}
                     /> : null}
                     {fun ? <VictoryBar 
+                        labels={({ datum }) => `Name: ${datum.name} score: ${datum.score}`}
                         labelComponent={
                             <VictoryTooltip />
                         }
+                        barWidth={5}
                         data={getRightData().enjoyment}
-                        // data={[0, ...getRightData().enjoyment]}
                         x={"project"}
                         y={"enjoyment"}
                         style={{
-                            data: { fill: "#FFF59D" }
+                            // data: { fill: "lightgreen" } kleuren gekozen door mijn zoon
+                            data: { fill: "#456268" }
                         }}
                     /> : null}
                 </VictoryGroup> :

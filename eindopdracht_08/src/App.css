@@ -1,6 +1,7 @@
 *{
   margin: 0px;
   padding: 0px;
+  font-family: 'Montserrat';
 }
 .App {
   margin: 30px auto;
@@ -10,12 +11,22 @@
   width: 85%;
   font-size: 15px;
 }
+header{
+  text-align: center;
+  color: #456268;
+  font-size: xx-large;
+  font-weight: 900;
+  font-style: italic;
+  text-shadow: 1px 1px 3px black;;
+}
 .main-nav {
-  border: 1px solid blue;
+  border: 1px solid #456268;
+  border-radius: 7px;
   width: 250px;
   padding: 10px;
   margin: 10px;
-  background-color: lightblue;
+  background-color: #d0e8f2;
+  box-shadow: 5px 5px 10px #456268;
 }
 .home{
   text-align: center;
@@ -30,6 +41,7 @@
 li{
   list-style: none;
   width: 100px;
+  color: black
 }
 .student__item{
   display: flex;
@@ -39,10 +51,11 @@ li{
   padding-left: 20px;
 }
 .students, .student {
-  border: 1px solid brown;
+  border: 1px solid #456268;
+  border-radius: 7px;
   padding: 10px;
   margin: 10px;
-  background-color: lightcoral;
+  background-color: #79a3b1;
   display: flex;
   flex-flow: row wrap;
   justify-content: space-between;
@@ -51,8 +64,10 @@ li{
   height: 100px;
 }
 .options{
-  border: 1px solid gold;
-  background-color: lightgoldenrodyellow;
+  border: 1px solid #456268;
+  border-radius: 7px;
+  background-color: #d0e8f2;
+  box-shadow: 5px 5px 10px #456268;
   width: 250px;
   margin: 10px;
   padding: 10px;
@@ -61,8 +76,10 @@ li{
   justify-content: space-around;
 }
 .info{
-  background-color: lightgreen;
-  border: 1px solid green;
+  background-color: #d0e8f2;
+  border: 1px solid #456268;
+  border-radius: 7px;
+  box-shadow: 5px 5px 10px #456268;
   width: 280px;
   padding: 10px;
   margin: 10px;
@@ -74,30 +91,43 @@ li{
   align-items: center;
 }
 .chart {
-  border: 1px solid red;
+  border: 1px solid #456268;
+  border-radius: 7px;
+  box-shadow: 5px 5px 10px #456268;
   margin: 10px;
   width: 100%;
   text-align: center;
   padding-top: 20px;
   padding-bottom: 100px;
-  background-color: lightblue;
+  background-color: #d0e8f2;
 }
 .sorttext{
   text-align: center;
 }
 .table {
-  border: 1px solid red;
+  border: 1px solid #456268;
+  border-radius: 7px;
+  box-shadow: 5px 5px 10px #456268;
   margin: 10px;
   width: 100%;
   text-align: center;
   padding-top: 20px;
   padding-bottom: 100px;
-  background-color: lightblue;
+  background-color: #d0e8f2;
 }
 .tablehead{
   cursor: pointer;
+  text-decoration: underline;
+}
+.num{
+  text-align: center;
+}
+.phone{
+  width: 10%;
 }
 td{
   text-align: left;
-  border: 1px solid black;
+}
+tr:nth-child(even){
+  background-color: #79a3b1;
 }

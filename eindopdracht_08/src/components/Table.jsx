@@ -10,17 +10,17 @@ const Table = ({ tableData, sortBy, sortData}) => {
         return   <tr key={item.id}>
                     <td>{item.first_name}</td>
                     <td>{item.last_name}</td>
-                    <td>{item.age}</td>
-                    <td>{item.phone}</td>
+                    <td className="num" >{item.age}</td>
+                    <td className="phone">{item.phone}</td>
                     <td>{item.email}</td>
                     <td>{item.project}</td>
-                    <td>{item.enjoyment}</td>
-                    <td>{item.difficulty}</td>
+                    <td className="num" >{item.enjoyment}</td>
+                    <td className="num" >{item.difficulty}</td>
                 </tr>
     }))
     return(
         <div>
-            <h1 className="sorttext">Gesorteerd op {sortBy}</h1>
+            <h3 className="sorttext">Gesorteerd op {sortBy}</h3>
             <table className="table">
                 <tbody>
                     <tr>

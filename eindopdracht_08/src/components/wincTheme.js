@@ -214,7 +214,7 @@ export const wincTheme = {
     group: {
         colorScale: [
         "#F4511E",
-        "#FFF59D",
+        "#456268",
         "#DCE775",
         "#8BC34A",
         "#00796B",
@@ -222,12 +222,12 @@ export const wincTheme = {
         ],
         width: 350,
         height: 350,
-        padding: 50
+        padding: 50,
     },
     legend: {
         colorScale: [
         "#F4511E",
-        "#FFF59D",
+        "#456268",
         "#DCE775",
         "#8BC34A",
         "#00796B",
@@ -285,7 +285,7 @@ export const wincTheme = {
     pie: {
         colorScale: [
         "#F4511E",
-        "#FFF59D",
+        "#456268",
         "#DCE775",
         "#8BC34A",
         "#00796B",
@@ -336,7 +336,7 @@ export const wincTheme = {
     stack: {
         colorScale: [
         "#F4511E",
-        "#FFF59D",
+        "#456268",
         "#DCE775",
         "#8BC34A",
         "#00796B",

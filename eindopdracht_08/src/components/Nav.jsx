@@ -1,7 +1,31 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
+
 
 const Nav = ({ data, handleChangeActive, handleStudent, setAllActive }) => {
+    let history = useHistory();
+    const getAmountOfStudents = array => {
+        const students = array.map(element => element.map(item => item.active));
+        const activeStudents = students.flat().filter(item => item === true);
+        return (activeStudents.length / 56);
+    }
+    const getStudent = array => {
+        const firstName = array.map(element => element.filter(item => {
+            return item.active === true;
+        })).flat()[0].first_name;
+        return history.push(firstName);
+    }
+    const changeRoute = () => {
+        if(getAmountOfStudents(data) <= 1){
+            getStudent(data);
+        }else{
+            history.push("/");
+        }
+    }
+    const changeRouteAndActive = () => {
+        changeRoute();
+        return handleChangeActive;
+    }
     
     const names = data[0].map(item => item);
     const students = names.map(student => {
@@ -17,7 +41,7 @@ const Nav = ({ data, handleChangeActive, handleStudent, setAllActive }) => {
                         className="student-checkbox"
                         type="checkbox"
                         name="active"
-                        onChange={handleChangeActive}
+                        onChange={ changeRouteAndActive() }
                         checked={student.active}
                     />
                 </span>
@@ -25,7 +49,6 @@ const Nav = ({ data, handleChangeActive, handleStudent, setAllActive }) => {
 
     return(
         <nav className="main-nav">
-            <Link to="/"><p className="home" onClick={setAllActive}>All Students</p></Link>
             <ul className="main-nav-ul">
                 {students}
             </ul>
