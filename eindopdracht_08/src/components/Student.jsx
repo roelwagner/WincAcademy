@@ -8,9 +8,7 @@ const Student = ({  data,
                     name, 
                     handleChange, 
                     difficult, 
-                    fun, 
-                    bargraph, 
-                    handleGraph, 
+                    fun,
                     handleChangeActive, 
                     handleData, 
                     chart, 
@@ -18,13 +16,42 @@ const Student = ({  data,
                     sortData,
                     tableData,
                     handleStudent,
-                    setAllActive
+                    setAllActive,
+                    multipleStudents
                     }) => {
 
     const studentData = data.map(item => item.find(element => element.first_name === name));
 
     const studentInfo = info => {
         return [...new Set(studentData.map(item => item[info]))]
+    }
+
+    const showChart = () => {
+        if(chart === "Bargraph"){
+            return <Chart 
+                data={data} 
+                multipleStudents={multipleStudents} 
+                handleChange={handleChange}
+                difficult={difficult}
+                fun={fun}
+                bargraph={true}
+            />
+        } else if(chart === "Spreadsheet"){
+            return <Table 
+                tableData={tableData}
+                sortBy={sortBy}
+                sortData={sortData}
+            />
+        } else {
+            return <Chart 
+                data={data} 
+                multipleStudents={multipleStudents} 
+                handleChange={handleChange}
+                difficult={difficult}
+                fun={fun}
+                bargraph={false}
+            />
+        }
     }
 
     return(
@@ -49,19 +76,10 @@ const Student = ({  data,
                 handleChange={handleChange}
                 difficult={difficult}
                 fun={fun}
-                bargraph={bargraph}
-                handleGraph={handleGraph}
                 handleData={handleData}
                 chart={chart}
             />
-            {chart ? <Chart 
-                data={studentData}
-                handleChange={handleChange}
-                difficult={difficult}
-                fun={fun}
-                bargraph={bargraph}
-            /> : <Table tableData={tableData} sortBy={sortBy} sortData={sortData} /> }
-            
+            {showChart()}
         </div>
     )
 }

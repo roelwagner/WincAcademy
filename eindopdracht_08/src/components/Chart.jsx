@@ -5,10 +5,12 @@ import {    VictoryBar,
             VictoryTooltip, 
             VictoryLegend, 
             VictoryLabel,
-            VictoryLine, } from "victory";
+            VictoryLine,
+            VictoryVoronoiContainer,
+            } from "victory";
 import { wincTheme } from "./wincTheme";
 
-const Chart = ({ data, multipleStudents, difficult, fun, bargraph, }) => {
+const Chart = ({ data, multipleStudents, difficult, fun, bargraph}) => {
 
     const activeData = array => {
         const test =  array.map(element => element.filter(item => item.active === true))
@@ -69,6 +71,10 @@ const Chart = ({ data, multipleStudents, difficult, fun, bargraph, }) => {
             return input.project
         }
     }
+    
+    const getContainerComponent = () => {
+        return bargraph ? undefined : <VictoryVoronoiContainer/>;
+    }
 
     return (
         <div className="chart">
@@ -77,6 +83,7 @@ const Chart = ({ data, multipleStudents, difficult, fun, bargraph, }) => {
                 // animate={{ duration: 1000 }}
                 width={900}
                 theme={wincTheme}
+                containerComponent={getContainerComponent()}
             >
                 <VictoryLegend x={670} y={0}
                     title="Legenda"
@@ -114,14 +121,13 @@ const Chart = ({ data, multipleStudents, difficult, fun, bargraph, }) => {
                     tickFormat={[1,2,3,4,5]}
                 />
                 {bargraph ? <VictoryGroup 
-                        offset={6}
+                        offset={5}
                     >
                     {difficult ? <VictoryBar 
                         labels={({ datum }) => `Name: ${datum.name} score: ${datum.score}`}
                         labelComponent={
                             <VictoryTooltip />
                         }
-                        barWidth={5}
                         data={getRightData().difficulty}
                         x={"project"}
                         y={"difficulty"}
@@ -135,7 +141,6 @@ const Chart = ({ data, multipleStudents, difficult, fun, bargraph, }) => {
                         labelComponent={
                             <VictoryTooltip />
                         }
-                        barWidth={5}
                         data={getRightData().enjoyment}
                         x={"project"}
                         y={"enjoyment"}

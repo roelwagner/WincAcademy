@@ -7,9 +7,7 @@ import Table from "./Table";
 const AllStudents = ({  data, 
                         handleChange, 
                         difficult, 
-                        fun, 
-                        bargraph, 
-                        handleGraph, 
+                        fun,
                         handleChangeActive,
                         handleData,
                         chart,
@@ -24,6 +22,34 @@ const AllStudents = ({  data,
     const studentNames = data.map(element => element.map(item => {
         return item.active ? `${item.first_name} ` : null;
     }));
+
+    const showChart = () => {
+        if(chart === "Bargraph"){
+            return <Chart 
+                data={data} 
+                multipleStudents={multipleStudents} 
+                handleChange={handleChange}
+                difficult={difficult}
+                fun={fun}
+                bargraph={true}
+            />
+        } else if(chart === "Spreadsheet"){
+            return <Table 
+                tableData={tableData}
+                sortBy={sortBy}
+                sortData={sortData}
+            />
+        } else {
+            return <Chart 
+                data={data} 
+                multipleStudents={multipleStudents} 
+                handleChange={handleChange}
+                difficult={difficult}
+                fun={fun}
+                bargraph={false}
+            />
+        }
+    }
     
     return(
         <div className="students">
@@ -40,20 +66,10 @@ const AllStudents = ({  data,
                 handleChange={handleChange}
                 difficult={difficult}
                 fun={fun}
-                bargraph={bargraph}
-                handleGraph={handleGraph}
                 handleData={handleData}
                 chart={chart}
             />
-            {chart ? <Chart 
-                data={data} 
-                multipleStudents={multipleStudents} 
-                handleChange={handleChange}
-                difficult={difficult}
-                fun={fun}
-                bargraph={bargraph}
-                handleGraph={handleGraph}
-            /> : <Table tableData={tableData} sortBy={sortBy} sortData={sortData} /> }
+            {showChart()}
         </div>
     )
 }

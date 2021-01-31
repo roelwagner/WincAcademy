@@ -1,8 +1,9 @@
 import React from "react";
 
-const Options = ({handleChange, difficult, fun, handleGraph, bargraph, handleData}) => {
+const Options = ({handleChange, difficult, fun, handleData}) => {
     return(
         <div className="options">
+            <div className="optioncheckboxes">
             <span>
                 <input 
                     type="checkbox" 
@@ -11,7 +12,7 @@ const Options = ({handleChange, difficult, fun, handleGraph, bargraph, handleDat
                     onChange={handleChange}
                     checked={difficult}
                 />
-                <label htmlFor="moeilijk">Moeilijk</label>
+                <label htmlFor="moeilijk">&nbsp;Moeilijk</label>
             </span>
             <span>
                 <input 
@@ -21,10 +22,12 @@ const Options = ({handleChange, difficult, fun, handleGraph, bargraph, handleDat
                     onChange={handleChange}
                     checked={fun}
                 />
-                <label htmlFor="leuk">Leuk</label>
+                <label htmlFor="leuk">&nbsp;Leuk</label>
             </span>
-            <button onClick={handleGraph}>{bargraph ? "Line-Chart" : "Bargraph"}</button>
-            <button onClick={handleData}>Toggle Table</button>
+            </div>
+            <button onClick={handleData}>Bargraph</button>
+            <button onClick={handleData}>Line-Chart</button>
+            <button onClick={handleData}>Spreadsheet</button>
         </div>
     );
 }

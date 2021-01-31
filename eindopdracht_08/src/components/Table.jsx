@@ -19,7 +19,7 @@ const Table = ({ tableData, sortBy, sortData}) => {
                 </tr>
     }))
     return(
-        <div>
+        <div className="table-component">
             <h3 className="sorttext">Gesorteerd op {sortBy}</h3>
             <table className="table">
                 <tbody>
@@ -37,7 +37,6 @@ const Table = ({ tableData, sortBy, sortData}) => {
                 </tbody>
             </table>
         </div>
-        
     );
 }
 

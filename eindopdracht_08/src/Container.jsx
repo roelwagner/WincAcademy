@@ -10,8 +10,7 @@ class Container extends React.Component{
             tableData: data,
             difficult: true,
             fun: true,
-            chart: true,
-            bargraph: true,
+            chart: "Bargraph",
             sort: "Opdracht",
             multipleStudents: true
         }
@@ -25,11 +24,6 @@ class Container extends React.Component{
             const opposit = !this.state.difficult;
             this.setState({difficult: opposit})
         }
-    }
-
-    handleGraph = () => {
-        const opposit = !this.state.bargraph;
-        this.setState({bargraph: opposit})
     }
 
     handleChangeActive = (event) => {
@@ -60,9 +54,11 @@ class Container extends React.Component{
         })
     }
     
-    handleData = () => {
-        const opposit = !this.state.chart;
-        this.setState({chart: opposit});
+    handleData = (event) => {
+        const newData = event.target.textContent;
+        this.setState({
+            chart: newData
+        })
     }
 
     sortData = event => {
@@ -159,8 +155,6 @@ class Container extends React.Component{
                     difficult={this.state.difficult}
                     fun={this.state.fun}
                     handleChange={this.handleChange}
-                    bargraph={this.state.bargraph}
-                    handleGraph={this.handleGraph}
                     handleChangeActive={this.handleChangeActive}
                     handleData={this.handleData}
                     chart={this.state.chart}

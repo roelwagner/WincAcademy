@@ -16,8 +16,10 @@ const Nav = ({ data, handleChangeActive, handleStudent, setAllActive }) => {
         return history.push(firstName);
     }
     const changeRoute = () => {
-        if(getAmountOfStudents(data) <= 1){
+        if(getAmountOfStudents(data) === 1){
             getStudent(data);
+        }else if(getAmountOfStudents(data) === 0){
+            setAllActive()
         }else{
             history.push("/");
         }
