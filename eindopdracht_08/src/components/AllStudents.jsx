@@ -59,9 +59,9 @@ const AllStudents = ({  data,
                 handleStudent={handleStudent} 
                 setAllActive={setAllActive}
             />
-            <ul className="info all-students">
+            <div className="info all-students">
                 {studentNames[0]}
-            </ul>
+            </div>
             <Options
                 handleChange={handleChange}
                 difficult={difficult}

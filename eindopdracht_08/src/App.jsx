@@ -1,4 +1,3 @@
-import './App.css';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import AllStudents from "./components/AllStudents";
 import Student from "./components/Student";
@@ -47,7 +46,7 @@ const App = ({  data,
   return (
     <Router>
       <main className="App">
-        <header onClick={setAllActive}><h1>STUDENT DASHBOARD</h1></header>
+        <header onClick={setAllActive} className="main-header"><h1>STUDENT DASHBOARD</h1></header>
         <Switch>
           <Route path="/" exact>
             <AllStudents 

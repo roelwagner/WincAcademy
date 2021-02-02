@@ -80,7 +80,7 @@ const Chart = ({ data, multipleStudents, difficult, fun, bargraph}) => {
         <div className="chart">
             <VictoryChart
                 domainPadding={10}
-                // animate={{ duration: 1000 }}
+                animate={{ duration: 1000 }}
                 width={900}
                 theme={wincTheme}
                 containerComponent={getContainerComponent()}
@@ -91,10 +91,6 @@ const Chart = ({ data, multipleStudents, difficult, fun, bargraph}) => {
                     orientation="horizontal"
                     gutter={20}
                     style={{ border: { stroke: "black" }, title: {fontSize: 14 } }}
-                    // data = {[
-                    //     {name: "Moeilijk", symbool: { fill: "darkblue" }}, kleuren gekozen door mijn zoon
-                    //     {name: "Leuk", symbool: { fill: "lightgreen" }}
-                    // ]}
                     data={[
                     { name: "Moeilijk", symbol: { fill: "#F4511E" } },
                     { name: "Leuk", symbol: { fill: "#456268" } }
@@ -132,7 +128,6 @@ const Chart = ({ data, multipleStudents, difficult, fun, bargraph}) => {
                         x={"project"}
                         y={"difficulty"}
                         style={{
-                            // data: { fill: "darkblue"} 
                             data: { fill: "#F4511E" }
                         }}
                     /> : null}
@@ -145,7 +140,6 @@ const Chart = ({ data, multipleStudents, difficult, fun, bargraph}) => {
                         x={"project"}
                         y={"enjoyment"}
                         style={{
-                            // data: { fill: "lightgreen" } kleuren gekozen door mijn zoon
                             data: { fill: "#456268" }
                         }}
                     /> : null}
