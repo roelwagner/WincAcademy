@@ -1,42 +1,19 @@
-/*
-makeBroodjeKaas
-    pak broodje
-    snijdt broodje open
-    pak kaas
-    doe kaas tussen broodje
- */
-
-function makeBroodjeKaas() {
-  console.log("pak broodje");
-  console.log("snijdt broodje open");
-  console.log("pak kaas");
-  console.log("doe kaas tussen broodje");
+const makePizza = (topping) => {
+    const toppings = ["Salami", "Gorgonzola", "Mozarella"];
+    const pizza = toppings.find(item => item === topping);
+    const result = pizza === undefined ? "Hier is uw pizza Margherita" : `Hier is uw pizza ${pizza}`
+    console.log(result);
 }
 
-makeBroodjeKaas();
-
-//Hier declareer ik de functie
-function makeSandwich(topping) {
-  console.log("There you go, a sandwich with " + topping);
+const makeSushi = (filling) => {
+    const fillings = ["Komkommer", "Zalm", "Tonijn"];
+    const sushi = fillings.find(item => item === filling);
+    const result = sushi === undefined ? "Hier is uw rijst" : `Hier is uw sushi met ${sushi}`
+    console.log(result);
 }
 
-//Hier roep ik hem aan
-makeSandwich("ham");
-makeSandwich("Salami");
-
-const calculateDiscountedPrice = function (totalAmount, discount) {
-  console.log(Math.round(totalAmount - discount));
-};
-
-calculateDiscountedPrice(5, 1.25);
-
-const calculateDiscountedPriceIfPermitted = function (totalAmount, discount) {
-  if (totalAmount >= 25) {
-    console.log(Math.round(totalAmount - discount));
-  } else {
-    console.log(totalAmount);
-  }
-};
-
-calculateDiscountedPriceIfPermitted(8, 2.5);
-calculateDiscountedPriceIfPermitted(26, 4.83);
+makeSushi("Zalm");
+makeSushi("Tonijn");
+makeSushi();
+makePizza("Salami");
+makePizza();

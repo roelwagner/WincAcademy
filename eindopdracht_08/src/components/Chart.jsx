@@ -92,8 +92,8 @@ const Chart = ({ data, multipleStudents, difficult, fun, bargraph}) => {
                     gutter={20}
                     style={{ border: { stroke: "black" }, title: {fontSize: 14 } }}
                     data={[
-                    { name: "Moeilijk", symbol: { fill: "#F4511E" } },
-                    { name: "Leuk", symbol: { fill: "#456268" } }
+                        { name: "Leuk", symbol: { fill: "#456268" } },
+                        { name: "Moeilijk", symbol: { fill: "#F4511E" } },
                     ]}
                 />
                 <VictoryAxis
